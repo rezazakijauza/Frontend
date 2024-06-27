@@ -1,0 +1,38 @@
+{
+  "product": [
+    {
+      "id": "c514",
+      "name": "Bakso Urat",
+      "price": "15",
+      "category": "Makanan"
+    },
+    {
+      "id": "8d37",
+      "name": "Jus Buah",
+      "price": "7",
+      "category": "Minuman"
+    },
+    {
+      "id": "8d37",
+      "name": "Sate Ayam",
+      "price": "13",
+      "category": "Makanan"
+    },
+    {
+      "id": "8d37",
+      "name": "Es Teh",
+      "price": "5",
+      "category": "Minuman"
+    }
+  ],
+  "category": [
+    {
+      "id": "c514",
+      "name": "Makanan"
+    },
+    {
+      "id": "1d01",
+      "name": "Minuman"
+    }
+  ]
+}

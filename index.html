@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        #main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 10px;
+        }
+        .form-container {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Admin Dashboard</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="category.html">Categories</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="main">
+            <section id="products">
+                <h2>Manage Products</h2>
+                <div class="form-container">
+                    <h3>Tambah Product</h3>
+                    <form>
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" name="product-name" required>
+
+                        <label for="product-price">Price:</label>
+                        <input type="number" id="product-price" name="product-price" required>
+
+                        <label for="product-description">Description:</label>
+                        <textarea id="product-description" name="product-description" rows="4" required></textarea>
+
+                        <label for="product-category">Category:</label>
+                        <input type="text" id="product-category" name="product-category" required>
+
+                        <input type="submit" value="Add Product">
+                    </form>
+                </div>
+
+                <h3>Existing Products</h3>
+                <table>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    <!-- Example row -->
+                    <tr>
+                        <td>Bakso Urat</td>
+                        <td>Rp15.000</td>
+                        <td>This is a sample product.</td>
+                        <td>Makanan</td>
+                        <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </table>
+            </section>
+
+            <section id="categories">
+                <h2>Manage Categories</h2>
+                <div class="form-container">
+                    <h3>Add New Category</h3>
+                    <form>
+                        <label for="category-name">Category Name:</label>
+                        <input type="text" id="category-name" name="category-name" required>
+                        <input type="submit" value="Add Category">
+                    </form>
+                </div>
+
+                <h3>Existing Categories</h3>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    <!-- Example row -->
+                    <tr>
+                        <td>Makanan</td>
+                        <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Minuman</td>
+                        <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

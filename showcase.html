@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #e2e0e0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .menu-title {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #000000;
+        }
+        .menu-title p{
+            margin: 20px 0;
+            font-size: 15px;
+            color: #1a1919;
+        }
+        .menu-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            transition: 0.6s;
+        }
+        .menu-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px;
+            width: 250px;
+            overflow: hidden;
+        }
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .menu-item .item-info {
+            padding: 15px;
+        }
+        .item-info h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+        .item-info p {
+            margin: 10px 0;
+            padding: none;
+            text-align: left;
+            color: #000000;
+        }
+        .item-info .price {
+            font-size: 18px;
+            color: #000000;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #040120;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/logoLp3i.svg" alt="Politeknik LP3I Kampus Tasikmalaya">
+        </div>
+        <div class="menu-title">
+            Menu Restoran
+            <p>Berikut ini adalah beberapa menu yang tersedia:</p>
+        </div>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="img/basoUrat.webp" alt="Bakso Urat">
+                <div class="item-info">
+                    <h3>Bakso Urat</h3>
+                    <p>Bakso urat merupakan kreasi baso dengan bahan dari tetelan atau urat sapi.
+                        Teksturnya agak kasar dengan sensasi makan yang berbeda dari yang lain.
+                        Dengan bahan tetelan atau urat sapi ini, menambah cita rasa bakso yang lebih gurih.</p>
+                        
+                    <p class="price">Rp15.000</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/jusBuah.jpg" alt="Jus Buah">
+                <div class="item-info">
+                    <h3>Jus Buah</h3>
+                    <p>Sari buah atau jus (fruit juice) adalah cairan yang terdapat secara alami dalam buah-buahan.
+                        Sari buah populer dikonsumsi manusia sebagai minuman. Sari buah merupakan hasil pengepresan,
+                        penghancuran atau ekstraksi buah segar yang telah masak melalui proses penyaringan.</p>
+                    <p class="price">Rp7.000</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/sateAyam.webp" alt="Bakso Urat">
+                <div class="item-info">
+                    <h3>Sate Ayam</h3>
+                    <p>Sate ayam adalah olahan daging ayam yang ditusuk menggunakan tusukan dari batang bambu,
+                        kemudian diolah dengan cara dibakar, dan disajikan dengan berbagai bumbu berupa saus atau sambal.</p>
+                    <p class="price text-bold">Rp13.000</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/esTeh.jpg" alt="Bakso Urat">
+                <div class="item-info">
+                    <h3>Es Teh</h3>
+                    <p>Es teh adalah minuman teh yang disajikan dingin dengan es batu. Biasanya,
+                        Es teh seringkali ditambahkan rasa seperti melati, dan buah-buahan seperti
+                        lemon, ceri, dan stroberi, atau susu. Es teh adalah minuman yang sering diminum
+                        saat siang hari karena suhu udara yang panas.</p>
+                    <p class="price">Rp5.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2023 Materi kuliah Front End Development by RezaZJ | Politeknik LP3I Kampus Tasikmalaya</p>
+        </div>
+    </div>
+</body>
+</html>
