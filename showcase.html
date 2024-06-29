@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Restoran</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        /* Styles from your previous showcase code */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -16,44 +18,44 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .header h1{
+        .header h1 {
             font-size: 20px;
             text-align: center;
             padding: 20px 0;
         }
-        .header p{
+        .header p {
             font-size: 15px;
             text-align: center;
             margin-top: 0;
         }
         .logo-background {
-            background-color: #e2e7e981; /* Background color for the logo area */
+            background-color: #e2e7e981;
             padding: 30px 0;
             display: flex;
-            justify-content: center; /* Center the logo horizontally */
-            align-items: center; /* Center the logo vertically */
+            justify-content: center;
+            align-items: center;
         }
         .logo-background img {
             height: 50px;
         }
         .menu {
             display: flex;
+            flex-wrap: wrap;
         }
         .menu-item {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 10px 1%; /* Adjusted margin for better spacing */
+            margin: 10px 1%;
             padding: 20px;
             text-align: left;
-            width: 23%; /* Adjusted width for better spacing */
+            width: 23%;
         }
         .menu-item img {
             max-width: 100%;
             border-radius: 10px;
-            height: 250px; 
-            width: 300px;/* Set a fixed height for images */
-            object-fit: cover; /* Ensure images cover the area uniformly */
+            height: 250px;
+            object-fit: cover;
         }
         .menu-item h3 {
             font-size: 1.1em;
@@ -65,25 +67,22 @@
             font-size: 0.9em;
             text-align: left;
             margin: 10px 0;
-            min-height: 40px; /* Set a minimum height for descriptions */
+            min-height: 40px;
+        }
+        .menu-item .makanan, .menu-item .minuman {
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 10px;
+            padding: 8px 10px;
         }
         .menu-item .makanan {
             background-color: #8ed5ff;
-            border-radius: 20px;
             color: #1d4870;
-            display: inline-block;
-            margin: 10px 0;
-            font-size: 10px;
-            padding: 8px 10px;
         }
         .menu-item .minuman {
             background-color: #ffcca1;
-            border-radius: 20px;
             color: #724d15;
-            display: inline-block;
-            margin: 10px 0;
-            font-size: 10px;
-            padding: 8px 10px;
         }
         .menu-item .price {
             font-size: 1.1em;
@@ -107,39 +106,42 @@
             <h1>Menu Restoran</h1>
             <p>Berikut ini adalah beberapa menu yang tersedia:</p>
         </div>
-        <div class="menu">
-            <div class="menu-item">
-                <img src="img/basoUrat.webp" alt="Bakso Urat">
-                <h3>Bakso Urat</h3>
-                <p>Bakso yang diisi irisan urat atau tendon dan daging tetelan kasar.</p>
-                <div class="makanan">Makanan</div>
-                <div class="price">Rp15.000</div>
-            </div>
-            <div class="menu-item">
-                <img src="img/jusBuah.jpg" alt="Jus Buah">
-                <h3>Jus Buah</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus.</p>
-                <div class="minuman">Minuman</div>
-                <div class="price">Rp9.000</div>
-            </div>
-            <div class="menu-item">
-                <img src="img/sateAyam.webp" alt="Bakso Urat">
-                <h3>Sate Ayam</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus.</p>
-                <div class="makanan">Makanan</div>
-                <div class="price">Rp13.000</div>
-            </div>
-            <div class="menu-item">
-                <img src="img/estehmanis.jpeg" alt="Jus Buah">
-                <h3>Es Teh</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, delectus.</p>
-                <div class="minuman">Minuman</div>
-                <div class="price">Rp5.000</div>
-            </div>
+        <div class="menu" id="productShowcase">
+            <!-- Product items will be loaded here dynamically -->
         </div>
     </div>
     <footer>
         &copy; 2023 Materi Kuliah Front End Development by Reza ZJ. | Politeknik LP3I Kampus Tasikmalaya
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function loadProducts() {
+            try {
+                const response = await axios.get('http://localhost:3000/product');
+                const products = response.data;
+                const productShowcase = document.getElementById('productShowcase');
+                productShowcase.innerHTML = '';
+                products.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'menu-item';
+                    productItem.innerHTML = `
+                        <img src="${product.imageUrl}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="${product.category === 'Makanan' ? 'makanan' : 'minuman'}">${product.category}</div>
+                        <div class="price">Rp${product.price}</div>
+                    `;
+                    productShowcase.appendChild(productItem);
+                });
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        // Load products on page load
+        window.onload = function() {
+            loadProducts();
+        }
+    </script>
 </body>
 </html>
